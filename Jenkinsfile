@@ -17,7 +17,10 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'docker run --rm python-app:1.0 python -c "import app; print(\"Test passed\")"'
+                sh '''
+    docker run --rm python-app:1.0 \
+    python -c 'import app; print("Test passed")'
+'''
             }
         }
 
